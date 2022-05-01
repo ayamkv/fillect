@@ -13,7 +13,7 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
-random_number = random.randint(1, 9000)
+random_number = random.randint(1, 299999)
 print(random_number)
 auth = tweepy.OAuthHandler(apikey, apikey_secret)
 auth_url = auth.get_authorization_url()
