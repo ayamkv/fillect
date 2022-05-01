@@ -1,5 +1,6 @@
 # fillect
-<img src="https://img.shields.io/badge/needs-imrpovement-purple?style=flat-square"/>
+<img src="https://img.shields.io/badge/needs-imrpovement-purple?style=flat-square"/> <img src="https://img.shields.io/badge/-tweepy-cyan?style=flat-square"/>
+
 tweets archillects photos randomly
 ‎
 ‎<br>
