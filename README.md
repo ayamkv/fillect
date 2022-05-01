@@ -10,22 +10,30 @@ basically tweets archillects photos randomly
 <img src="https://img.shields.io/badge/termux-only-grey?style=flat-square"/>
 
 • copy and paste this command <br>
-> this will clone , install the required module & create **config.py**
+> this will clone and install the required modules
 ```
 git clone https://github.com/ayamkv/fillect
 pip install -r requirements.txt
-echo $'apikey = "#yourapikey"\napikey_secret = "#yourapikeysecret"\ntoken = "#yourtoken"\ntoken_secret = "#yourtokensecret"' >> config.py
 
 ```
 
 • fill in your api key in **config.py**
 
-> this is what it looks like inside **config.py**
+
 ```
-apikey = "#yourapikey"
-apikey_secret = '#yourapikeysecret'
-token = '#yourtoken'
-token_secret = '#yourtokensecret'
+# your api keys
+apikey = '#'
+apikey_secret = '#'
+token = '#'
+token_secret = '#'
+
+# LOOP 
+loop = True
+hours = 2   
+# loops every ... seconds 
+# ignore if loop is False
+sleeptime = hours * 60 * 60
+
 ```
 • then run 
 ```

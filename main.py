@@ -70,10 +70,7 @@ def postTweet(num, url):
   os.system('wget -nv --output-document={}.jpg {}'.format(num, url))
   tweet = str(random_number) + "\n #fillect"
   api.update_status_with_media(tweet, filename)
-  getStatus = 'https://twitter.com/twitter/statuses/{}'.format(tweetID(api))
-  print(Colorate.Horizontal(Colors.blue_to_purple,getStatus))
 
-  return getStatus
 
 # try using webbrowser to open the tweet if it cant itll run a termux command if it cant too it will pass
 def launchURL(url):
@@ -86,14 +83,30 @@ def launchURL(url):
       # print('termux')
     else:
       print('Done')
-    
-statusUrl = postTweet(random_number, arcURL
-                     #this causes it to download the file two times ( run postTweet two times)
 
-if __name__ == '__main__':
-    while True:
+def getStatus():
+    stUrl = 'https://twitter.com/twitter/statuses/{}'.format(tweetID(api))
+   
+
+    return stUrl
+
+statusUrl = getStatus()
+
+def job():
       tweetAuth()
       postTweet(random_number, arcURL)
+      print(Colorate.Horizontal(Colors.blue_to_purple,statusUrl))
       launchURL(statusUrl)
       deleteImage(filename)
-      time.sleep(10000)
+
+if __name__ == '__main__':
+  if loop == True:
+    print('Loop = True')
+    while True:
+      job()
+      print(sleeptime + ' ' + hours)
+      time.sleep(sleeptime) 
+  else:
+    print('Loop = False')
+    job()
+    time.sleep(2)
