@@ -1,7 +1,10 @@
-import requests, tweepy
+import os
+os.system('pip install -r requirements.txt')
+
+import requests, tweepy, webbrowser
 from config import *
 from pystyle import Colors, Colorate, Add, Center
-import urllib.request, random, os, time
+import urllib.request, random, time
 from PIL import Image
 # or
 def clearConsole():
@@ -10,7 +13,8 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
-
+random_number = random.randint(1, 9000)
+print(random_number)
 auth = tweepy.OAuthHandler(apikey, apikey_secret)
 auth_url = auth.get_authorization_url()
 auth.set_access_token(token, token_secret)
@@ -25,8 +29,7 @@ banner1 = '''
 |  |_  |__||__|
 |   _]  __  __ 
 |  |   |  ||  |
-|__|   |__||__|
-               
+|__|   |__||__|    
                           
  '''
 text1 = 'fillect '
@@ -34,6 +37,8 @@ print(Colorate.Horizontal(Colors.blue_to_purple, Add.Add(banner1, text1, 4)))
 print('\n')
 # print(Colorate.Horizontal(Colors.blue_to_purple, text1, 2))
 # 
+arcURL = "https://archillect.mhsattarian.workers.dev/{}/img".format(random_number)
+filename = '{}.jpg'.format(random_number)
 def tweetID(api):
     tweet = api.user_timeline(
         id = api.verify_credentials().screen_name, 
@@ -41,38 +46,54 @@ def tweetID(api):
         tweet_mode="extended", 
         include_entities=True 
         )[0]
-    print(tweet.id)
+    # print(tweet.id)
     return tweet.id
+  
+def tweetAuth():
+    try:  # auth
+      api.verify_credentials()
+      print(Colorate.Color(Colors.cyan, 'Successful Authentication', True))
+      print ("Authenticated as: %s" % api.verify_credentials().screen_name)
+    except:
+      print(Colors.red + 'Failed authentication')
+      
 
-try:
-    api.verify_credentials()
-    print(Colorate.Color(Colors.cyan, 'Successful Authentication', True))
-    print ("Authenticated as: %s" % api.verify_credentials().screen_name)
-except:
-    print(Colors.red + 'Failed authentication')
+def deleteImage(fn):
+  filename = fn
+  os.system('rm -rf {}'.format(filename)) # delete the image file to reduce space 
+  print('image file deleted')
+
+
+def postTweet(num, url):
+  num = num
+  url = url
+  os.system('wget -nv --output-document={}.jpg {}'.format(num, url))
+  tweet = str(random_number) + "\n #fillect"
+  api.update_status_with_media(tweet, filename)
+  getStatus = 'https://twitter.com/twitter/statuses/{}'.format(tweetID(api))
+  print(Colorate.Horizontal(Colors.blue_to_purple,getStatus))
+
+  return getStatus
+
+# try using webbrowser to open the tweet if it cant itll run a termux command if it cant too it will pass
+def launchURL(url):
+    url = url
+    try:
+      webbrowser.open(url)
+      # print('webbrowser')
+    except:
+      os.system("termux-open-url {}".format(url))
+      # print('termux')
+    else:
+      print('Done')
     
-random_number = random.randint(1, 9000)
-arcURL = "https://archillect.mhsattarian.workers.dev/{}/img".format(random_number)
-# imgURL = "http://site.meishij.net/r/58/25/3568808/a3568808_142682562777944.jpg"
+statusUrl = postTweet(random_number, arcURL
+                     #this causes it to download the file two times ( run postTweet two times)
 
-print(random_number)
-# api.update_status(random_number)
-filename = '{}.jpg'.format(random_number)
-# 
-print(filename)
-# r = requests.get(arcURL, allow_redirects=True)
-# open(filename, 'wb').write(r.content)
-os.system('wget --output-document={}.jpg {}'.format(random_number, arcURL))
-time.sleep(1)
-tweet = str(random_number) + "\n #fillect"
-api.update_status_with_media(tweet, filename)
-getStatus = 'https://twitter.com/twitter/statuses/{}'.format(tweetID(api))
-print(getStatus)
-os.system("termux-open-url {}".format(getStatus))
-time.sleep(5)
-os.system('rm -rf {}'.format(filename))
-# os.system('ls')
-# urllib.request.urlretrieve(arcURL, "{}.jpg".format(random_number))
-# os.startfile("{}.jpg".format(random_number))
-# print('Auth success')
-# print ("Authenticated as: %s" % api.me().screen_name)
+if __name__ == '__main__':
+    while True:
+      tweetAuth()
+      postTweet(random_number, arcURL)
+      launchURL(statusUrl)
+      deleteImage(filename)
+      time.sleep(10000)
