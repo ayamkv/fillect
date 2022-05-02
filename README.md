@@ -5,18 +5,18 @@
 
 tweets archillects photos randomly
 ‎
-‎<br>
+‎<br><br>
 
-## Installation
+## 👨‍🔧 Installation 
 
-• copy and paste this command <br>
+• Copy and paste this command 📋 <br>
 > this will clone and install the required modules
 ```
 git clone https://github.com/ayamkv/fillect.git
 pip install -r requirements.txt
 ```
 
-• fill in your api key in **config.py**
+• fill in your api key in **config.py** 📝
 
 
 ```
@@ -27,15 +27,22 @@ token = '#'
 token_secret = '#'
 ```
 
-• then run 
+• then finally run ⚙️
 
 ```
 python main.py
 ```
 
+• Done ✅
+
+<br>
+
+## 🔧 Configuration
+
 <hr> 
 
-## randomize = True
+
+### • randomize = True
 
 `True`
  it will randomize 
@@ -44,16 +51,12 @@ python main.py
 it will show an input for your desired number
 
 
-## loop = True
+### • loop = True
 
  loops every x amount of hour
 
-```
-loop = True
-hours = 2   
-sleeptime = hours * 60 * 60
 
-```
+
 
 
 
