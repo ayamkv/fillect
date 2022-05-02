@@ -1,7 +1,7 @@
-# fillect
-<img src="https://img.shields.io/badge/needs-imrpovement-purple?style=flat-square"/> <img src="https://img.shields.io/badge/-tweepy-cyan?style=flat-square"/>
+# fillect  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ayamkv/fillect)
+ <img src="https://img.shields.io/badge/needs-imrpovement-purple"/> <img src="https://img.shields.io/badge/-tweepy-cyan"/>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ayamkv/fillect)
+
 
 tweets archillects photos randomly
 ‎
