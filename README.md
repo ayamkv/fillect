@@ -7,8 +7,7 @@ tweets archillects photos randomly
 ‎
 ‎<br>
 
-## how 2 do it urself 
-
+## Installation
 
 • copy and paste this command <br>
 > this will clone and install the required modules
@@ -36,10 +35,18 @@ python main.py
 
 <hr> 
 
+## randomize = True
+
+`True`
+ it will randomize 
+
+`False`
+it will show an input for your desired number
+
 
 ## loop = True
 
- loops every x hour
+ loops every x amount of hour
 
 ```
 loop = True
@@ -47,6 +54,8 @@ hours = 2
 sleeptime = hours * 60 * 60
 
 ```
+
+
 
 <br>
 
