@@ -1,6 +1,5 @@
 import os
-os.system('pip install -r requirements.txt')
-
+# os.system('pip install -r requirements.txt')
 import requests, tweepy, webbrowser
 from config import *
 from pystyle import Colors, Colorate, Add, Center
@@ -13,7 +12,19 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
-random_number = random.randint(1, 299999)
+if randomize == True:
+   print('Randomize is set to true')
+   time.sleep(2) 
+   random_number = random.randint(1, 299999)
+elif randomize == False:
+   print('Randomize is set to False')
+   random_number = input('num : ')
+else:
+   print('Randomize is set to None, setting it to True..')
+   time.sleep(2)
+   randomize = True
+
+
 print(random_number)
 auth = tweepy.OAuthHandler(apikey, apikey_secret)
 auth_url = auth.get_authorization_url()
@@ -41,10 +52,10 @@ arcURL = "https://archillect.mhsattarian.workers.dev/{}/img".format(random_numbe
 filename = '{}.jpg'.format(random_number)
 def tweetID(api):
     tweet = api.user_timeline(
-        id = api.verify_credentials().screen_name, 
+        user_id = api.verify_credentials().screen_name, 
         count = 1, 
-        tweet_mode="extended", 
-        include_entities=True 
+        tweet_mode="extended" 
+       # include_entities=True
         )[0]
     # print(tweet.id)
     return tweet.id
@@ -104,7 +115,7 @@ if __name__ == '__main__':
     print('Loop = True')
     while True:
       job()
-      print(sleeptime + ' ' + hours)
+      print(str(sleeptime) + ' ' + str(hours))
       time.sleep(sleeptime) 
   else:
     print('Loop = False')
