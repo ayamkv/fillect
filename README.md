@@ -1,10 +1,20 @@
-# fillect  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ayamkv/fillect)
- <img src="https://img.shields.io/badge/needs-imrpovement-purple"/> <img src="https://img.shields.io/badge/-tweepy-cyan"/>
+<div align="center">
+
+  <img src="https://i.ibb.co/hK7th4s/New-Project-536-19-FDE17.png"/>
+
+   <h1> fillect </h1>
+    
+ <img src="https://img.shields.io/badge/needs-imrpovement-purple"/> <img src="https://img.shields.io/badge/-tweepy-cyan"/> 
+ 
+ tweets archillects photos randomly
+</div>
+
+
+ 
 
 
 
-tweets archillects photos randomly
-‎
+
 ‎<br><br>
 
 ## 👨‍🔧 Installation 
@@ -36,6 +46,9 @@ python main.py
 • Done ✅
 
 <br>
+
+### or use heroku 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ayamkv/fillect)
 
 ## 🔧 Configuration
 
