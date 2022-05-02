@@ -6,7 +6,7 @@
     
  <img src="https://img.shields.io/badge/needs-imrpovement-purple"/> <img src="https://img.shields.io/badge/-tweepy-cyan"/> 
  
- tweets archillects photos randomly
+ a python script that tweets archillects photos randomly
 </div>
 
 
@@ -69,6 +69,9 @@ it will show an input for your desired number
  loops every x amount of hour
 
 
+<br> <br>
+# FAQ
+• [How to get twitter API keys?](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
 
 
 
@@ -79,6 +82,7 @@ it will show an input for your desired number
 
 - needs to support gif files
 - possibly a flask web version
+
 
 
 <br>
