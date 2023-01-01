@@ -1,12 +1,13 @@
 <div align="center">
 
-  <img src="https://i.ibb.co/QJt5NH7/a87cc957-8bd9-4c98-bffb-36a661c882d7-CFCBB39.png"/>
+  <img src="https://i.ibb.co/QJt5NH7/a87cc957-8bd9-4c98-bffb-36a661c882d7-CFCBB39.png"/>and 
 
    <h1> fillect </h1>
     
  <img src="https://img.shields.io/badge/needs-imrpovement-purple"/> <img src="https://img.shields.io/badge/-tweepy-cyan"/> 
  
- a python script that tweets archillects photos randomly
+ a python script that tweets archillects photos randomly using [Arpillect](https://github.com/mhsattarian/archillect-api)
+API
 </div>
 
 
@@ -26,10 +27,10 @@ git clone https://github.com/ayamkv/fillect.git
 pip install -r requirements.txt
 ```
 
-• fill in your api key in **config.py** 📝
+• Fill your api key in **`config.py`** 📝
 
 
-```
+```python
 # your api keys
 apikey = '#'
 apikey_secret = '#'
@@ -47,15 +48,18 @@ python main.py
 
 <br>
 
-### or use heroku 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ayamkv/fillect)
-
 ## 🔧 Configuration
 
 <hr> 
 
 
-### • randomize = True
+### • Random
+
+```python
+randomize = True
+# or
+randomize= False 
+```
 
 `True`
  it will randomize 
@@ -64,8 +68,11 @@ python main.py
 it will show an input for your desired number
 
 
-### • loop = True
+### • Loop 
 
+```python
+loop = 2 # loops every 2 hour
+```
  loops every x amount of hour
 
 
