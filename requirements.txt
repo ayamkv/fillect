@@ -1,4 +1,4 @@
-Pillow==9.1.0
+Pillow==9.3.0
 pystyle==2.9
 requests==2.27.1
 tweepy==4.12.1
